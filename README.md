@@ -82,19 +82,25 @@ For more detailed instructions, we recommend that you follow this documentation:
    npm run dev
    ```
 
----
 
-### Backend Setup
+---
+### Frontend Customization
 
 1. Update the API domain:  
    Navigate to `dashboard -> src -> utils -> axios.jsx` and set your local development URL for `API_DOMAIN`.
 
-2. Open the backend directory in your IDE:
+
+---
+
+### Backend Setup
+
+
+1. Open the backend directory in your IDE:
    ```bash
    cd .\server\
    ```
 
-3. Create a virtual environment and activate it:
+2. Create a virtual environment and activate it:
    - **Windows**:
      ```bash
      python -m venv venv
@@ -106,12 +112,12 @@ For more detailed instructions, we recommend that you follow this documentation:
      source venv/bin/activate
      ```
 
-4. Install Python dependencies:
+3. Install Python dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-5. Apply database migrations:
+4. Apply database migrations:
    - **Windows**:
      ```bash
      python manage.py migrate
@@ -121,7 +127,7 @@ For more detailed instructions, we recommend that you follow this documentation:
      python3 manage.py migrate
      ```
 
-6. Create a superuser for accessing the admin dashboard:
+5. Create a superuser for accessing the admin dashboard:
    - **Windows**:
      ```bash
      python manage.py createsuperuser
@@ -131,7 +137,7 @@ For more detailed instructions, we recommend that you follow this documentation:
      python3 manage.py createsuperuser
      ```
 
-7. Run the development server:
+6. Run the development server:
    - **Windows**:
      ```bash
      python manage.py runserver
@@ -152,11 +158,14 @@ For more detailed instructions, we recommend that you follow this documentation:
 2. **Update Environment Variables**  
    - Copy the `project_id` from `service-account.json`.  
    - Replace the `project_id` in `server -> .env`.
-
+  
 3. **Development Mode**  
    - Set `DEBUG=True` in the `.env` file for development purposes.
+  
+4. **Update Settings.py**  
+   - Then add you front-end server domain into `CORS_ALLOWED_ORIGINS` and `CSRF_TRUSTED_ORIGINS`
 
-4. **Self-Hosting**  
+5. **Self-Hosting**  
    - Replace the hostname in `.env` with your desired domain for production hosting.
 
 ---
